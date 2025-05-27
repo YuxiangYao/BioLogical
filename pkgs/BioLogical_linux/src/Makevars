@@ -1,2 +1,2 @@
 PKG_CPPFLAGS = -I./include
-PKG_LIBS = -L./bin -Wl -lz3 
+PKG_LIBS = -L./bin -lz3 
