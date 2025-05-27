@@ -33,7 +33,7 @@ files for convenient installation and use (See `Releases`). Please ensure the co
 - `devtools::install_github("YuxiangYao/BioLogical/pkgs/BioLogical_linux/")`
 - Download the compressed files of the source code.
 
-   `download.file("https://github.com/YuxiangYao/BioLogical/refs/heads/main/pkg_source/BioLogical_0.1.17_linux.tar.gz", "BioLogical_0.1.17.tar.gz")`
+   `download.file("https://github.com/YuxiangYao/BioLogical/raw/refs/heads/main/pkg_source/BioLogical_0.1.17_linux.tar.gz", "BioLogical_0.1.17.tar.gz")`
   
    `install.packages("/your/directory/to/file/BioLogical_0.1.17.tar.gz", repos=NULL)`
 
@@ -41,7 +41,7 @@ files for convenient installation and use (See `Releases`). Please ensure the co
 - `devtools::install_github("YuxiangYao/BioLogical/pkgs/BioLogical_win/")`
 - Download the compressed files of the source code.
 
-   `download.file("https://github.com/YuxiangYao/BioLogical/refs/heads/main/pkg_source/BioLogical_0.1.17_win.tar.gz", "BioLogical_0.1.17.tar.gz")`
+   `download.file("https://github.com/YuxiangYao/BioLogical/raw/refs/heads/main/pkg_source/BioLogical_0.1.17_win.tar.gz", "BioLogical_0.1.17.tar.gz")`
   
    `install.packages("/your/directory/to/file/BioLogical_0.1.17.tar.gz", repos=NULL)`
 
@@ -49,7 +49,7 @@ files for convenient installation and use (See `Releases`). Please ensure the co
 - `devtools::install_github("YuxiangYao/BioLogical/pkgs/BioLogical_mac/")`
 - Download the compressed files of the source code.
 
-   `download.file("https://github.com/YuxiangYao/BioLogical/refs/heads/main/pkg_source/BioLogical_0.1.17_mac.tar.gz", "BioLogical_0.1.17.tar.gz")`
+   `download.file("https://github.com/YuxiangYao/BioLogical/raw/refs/heads/main/pkg_source/BioLogical_0.1.17_mac.tar.gz", "BioLogical_0.1.17.tar.gz")`
   
    `install.packages("/your/directory/to/file/BioLogical_0.1.17.tar.gz", repos=NULL)`
 
