@@ -1,0 +1,8 @@
+exportPattern("^BoolFun|^MulV|^BoolBioNet|^DNS|^c|^FigLatticePlot|^Load");
+
+importFrom("Rcpp", "evalCpp")
+importFrom("utils", "read.csv", "read.table", "combn")
+importFrom("stats", "runif")
+importFrom("ggplot2","aes", "element_blank", "element_rect", "element_text", "geom_polygon",
+ "ggplot", "guides", "scale_fill_manual", "scale_x_continuous", "scale_y_continuous", "theme")
+useDynLib(BioLogical, .registration = TRUE)

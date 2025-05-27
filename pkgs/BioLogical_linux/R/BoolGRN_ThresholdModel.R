@@ -1,0 +1,24 @@
+#' @title 8 threshold-based genetic networks
+#' @details List, contains all network. Each element is an independent network.
+#' Their names breifly describe the networks.
+#' \itemize{
+#'   \item \code{ArabidopsisFlower}: The network determines during Arabidopsis thaliana flower development \href{https://doi.org/10.1105/tpc.104.021725}{Espinosa-Soto2004}
+#'   \item \code{emt26network}: 36-node epithelial-to-mesenchymal transition (EMT) network \href{https://doi.org/10.1038/npjsba.2015.14}{Steinway2015}
+#'   \item \code{emt72network}: 72-node EMT network \href{https://doi.org/10.1088/1478-3975/aaf8d4}{Jia2019}
+#'   \item \code{gastricnetwork}: Endogenous molecular network of gastric cancer \href{https://doi.org/10.18632/oncotarget.3633}{Li2015}
+#'   \item \code{sclcnetwork}: Transcription factor network in small cell lung cancer \href{https://doi.org/10.1158/0008-5472.CAN-16-1467}{Udyavar2016}
+#'   \item \code{stemcellnetwork}: Network of induced pluripotent stem cells \href{https://doi.org/10.1371/journal.pcbi.1002300}{Chang2011}
+#'   \item \code{yeastbudding}: Budding yeast cell cycle network \href{https://doi.org/10.1073/pnas.0305937101}{Li2004}
+#'   \item \code{yeastfission}: Fission yeast cell cycle network \href{https://doi.org/10.1371/journal.pone.0001672}{Davidich2008}
+#' }
+#' One network is also organized as a \code{List}:
+#'  \itemize{
+#'   \item \code{AllMember}: \code{CharacterVector}, all genes' name
+#'   \item \code{InEdge}: \code{IntegerVector}, Input regulations by order. No input is denoted as \code{NA}. In each vector, first element is highest bit.
+#'   \item \code{OutEdge}: \code{IntegerVector}, Output regulations by order. No output is denoted as \code{NA}.
+#'   \item \code{BoolFun}: \code{IntegerVector}, Boolean function of each genes (length=2^length(\code{InEdge})). If \code{InEdge} is \code{NA}, it also keeps \code{NA}.
+#' }
+#' Detail information, please see each reference.
+#' @usage
+#' data(BoolGRN_ThresholdModel)
+"BoolGRN_ThresholdModel"
