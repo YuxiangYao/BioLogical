@@ -1,0 +1,16 @@
+Package: BioLogical
+Type: Package
+Title: a universal logical-based analysis framework of biological complex systems
+Version: 0.1.19
+Author: Yao Yuxiang
+Maintainer: Yao Yuxiang <y.x.yao@foxmail.com>
+Description: BioLogic, a user-friendly package designed to analyze the foundational properties of universal logical systems. It enables the examination of logical paradigms, computation of order parameters, transformation of system frameworks, and simulation of discrete dynamic systems.
+License: GPL-3 + MIT 
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.5.0)
+Imports: Rcpp (>= 1.0.10), 
+         ggplot2 (>= 3.4.0)
+Suggests: igraph
+LinkingTo: Rcpp
+RoxygenNote: 7.2.3

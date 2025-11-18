@@ -1,0 +1,3 @@
+PKG_CPPFLAGS = -I./include
+PKG_LIBS = -L./bin -Wl,-Bstatic -lz3 -Wl,-Bdynamic
+CXX_STD = CXX17

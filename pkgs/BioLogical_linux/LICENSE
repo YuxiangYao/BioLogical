@@ -1,0 +1,13 @@
+LICENSE AND COPYRIGHT 
+
+(1) Part A
+Files: src/bin/libz3.a
+       src/include/z3*.h
+Copyright (c) Microsoft Corporation
+All rights reserved. 
+License: MIT License
+
+(2) Part B
+Files: Other files, excluding those in Part A
+Copyright (c) Yuxiang Yao 2025
+License: GNU General Public License (version >=3)

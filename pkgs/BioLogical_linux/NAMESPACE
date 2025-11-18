@@ -1,0 +1,56 @@
+export(
+  "BoolBioNet_BoolFun",
+  "BoolBioNet_Checker",
+  "BoolBioNet_CoreDyn",
+  "BoolBioNet_FBLoops",
+  "BoolBioNet_NodeAttr",
+  "BoolBioNet_SimpNet",
+  "BoolBioNet_StrConComp",
+  "BoolBioNet_Visualize",
+  "BoolFun_Complexity",
+  "BoolFun_Effectiveness",
+  "BoolFun_Expr2MapTable",
+  "BoolFun_Generator",
+  "BoolFun_NestedCana",
+  "BoolFun_Polynomial",
+  "BoolFun_QMForm",
+  "BoolFun_Sensitivity",
+  "BoolFun_Type",
+  "DNS_DamageSpread",
+  "DNS_DamageSpread_Load",
+  "DNS_Percolation",
+  "DNS_Engaged",
+  "FigLatticePlot",
+  "LoadBoolBioNetwork",
+  "LoadManualNetwork",
+  "LoadMulValBioNets",
+  "MulV2Bool_Bool2MulV",
+  "MulVFun_Complexity",
+  "MulVFun_Effectiveness",
+  "MulVFun_Generator",
+  "MulVFun_is_Domainted",
+  "MulVFun_is_NestedCana",
+  "MulVFun_is_Signed",
+  "MulVFun_is_Threshold",
+  "MulVFun_Polynomial",
+  "MulVFun_QMForm",
+  "MulVFun_Recovery",
+  "MulVFun_Sensitivity",
+  "Transient_Process_A",
+  "Transient_Process_G",
+  "Transient_Process_L",
+  "Transient_Process_M"
+  )
+
+exportPattern("^BoolFun_");
+exportPattern("^MulVFun_");
+exportPattern("^BoolBioNet_")
+exportPattern("^DNS_");
+exportPattern("^c_");
+
+importFrom("Rcpp", "evalCpp")
+importFrom("utils", "read.csv", "read.table", "combn")
+importFrom("stats", "runif")
+importFrom("ggplot2","aes", "element_blank", "element_rect", "element_text", "geom_polygon",
+ "ggplot", "guides", "scale_fill_manual", "scale_x_continuous", "scale_y_continuous", "theme")
+useDynLib(BioLogical, .registration = TRUE)

@@ -1,0 +1,137 @@
+#' @title Analyze potential engaged nodes within Boolean/multi-valued system
+#' @description The function recursively analyzes nodes that contribute to the 
+#' final systematic dynamic feature. Nodes are not considered as "engaged", 
+#' including terminal nodes (those with out-degree zero) and useless nodes (those
+#' whose outgoing links are all useless). A node is deemed \emph{Useless} if it 
+#' does not influence the computation of any downstream node. For example, given
+#' \eqn{\{A,B,C\} \rightarrow X}, where \eqn{f(X)=A*B}, thus node C is useless 
+#' because it does not affect the value of X (if and only if C does not have 
+#' other downstream nodes). Detail concepts can be found in the paper 
+#' [\href{https://doi.org/10.1103/PhysRevLett.90.068702}{Socolar2003}].
+#' @param Size an integer, size of system.
+#' @param OBF_Type a character, ordered Boolean function type (OBF).
+#' @param OBF_iPara1 an integer, configuration parameter for OBF.
+#' @param OBF_iPara2 an integer, configuration parameter for OBF (Not necessary for some types of OBF).
+#' @param OBF_Ratio a numeric value, proportion of ordered Boolean function within system.
+#' @param RBF_Bias a NumvericVector, biases of random function (each is (0,1), sum=1)
+#' @param Net_Type a character, system topological type.
+#' @param Net_fPara a numeric value, topological configured parameters.
+#' @param Controller an IntegerVector, denote which nodes should be manually controlled. (Default: \code{NULL})
+#' @param ConVals a BooleanVector, controlled nodes' values. (Default: \code{NULL})
+#' @param NodeAttri A logical value, should return node's attribute? (Default: \code{FALSE})
+#' @param ResidualNet A logical value, should return residual network? (Default: \code{FALSE})
+#' @param NumSys an integer, number of discrete value
+#' @details
+#' Ensure that all parameters are properly set. \code{Size} is dynamic parameters
+#' for simualtion. \code{OBF_Type}, \code{OBF_iPara1}, \code{OBF_iPara2}, 
+#' \code{RBF_Bias}, \code{OBF_Ratio}, configure functions. See their roles in 
+#' \link{BoolFun_Generator}. 
+#' \code{Net_Type} and \code{Net_fPara} determine the topological structure:
+#'  \itemize{
+#'   \item \code{K}: Kauffman model, \code{Net_fPara} is in-degree.
+#'   \item \code{E}: Erdos-Renyi graph, \code{Net_fPara} is average degree.
+#'   \item \code{R}: Regular random graph, \code{Net_fPara} is connecting number.
+#'   \item \code{L}: Lattic sqaure, \code{Net_fPara} is type (4=Square; 3=Triangle; 6=Hexagon).
+#'   \item \code{N}: Null model (Not enabled here).
+#' } 
+#'
+#' The \code{Controller} parameter specifies the manually controlled nodes, 
+#' where either node indices or names are acceptable. Note that the function does
+#' not validate the correctness of the indices; users must ensure their accuracy.
+#' \code{ConVals} provides the corresponding values for the controlled 
+#' genes. If \code{ConVals} is not specified (\code{NULL}), values are 
+#' generated randomly. If provided (a Boolean vector), only the first 
+#' \code{|{Controller}|} values are used; if the length of \code{ConVals} 
+#' is less than that of \code{Controller}, the function returns an error message 
+#' and execution halts. 
+#' 
+#' \code{Residual networks} retain all nodes from the original systems for 
+#' comparative purposes (if \code{ResidualNet} is \code{TRUE}). Stable nodes, 
+#' useless nodes, and their corresponding edges are removed in subsequent analyses.
+#' Only the remaining nodes, edges, and Boolean functions contribute to the 
+#' terminal dynamic behaviors.
+#' 
+#' @return A five-element list:
+#' \itemize{
+#'   \item \code{[[1]]}: overall information (See example).
+#'   \item \code{[[2]] IntegerVector[Size]}: the detail information regarding the
+#' possible coexistence states of each node is represented as an int32 number,
+#' where each bit indicates the presence of a corresponding state in the node.
+#'   \item \code{[[3]] IntegerVector[Size]}: record all nodes are stable(1), useless(0), engaged(-1).
+#'   \item \code{[[4]] IntegerVector[Size]}: the number of coexistence states of each node, 
+#' such as stable(1), two-possible(2), three-possible(3) ... (>2 means multi-valued systems)
+#'   \item \code{[[5]]}: the residual network structure.
+#' }
+#' @export
+#' @examples
+#' # Test a (k=2, p=0.5) Kauffman model. It is critical when 2p(1-p)K=1.
+#' # set.seed(20250101L);
+#' # DNS_Engaged(10000L, RBF_Bias=0.5, Net_Type='K', Net_fPara=2.00);
+#' # Return $[[Overview]] (other are NA)
+#' #  Stable    Useless    Engaged   External Controlled
+#' #    7641       1713        646          0          0 
+#' set.seed(20250101L)
+#' DNS_Engaged(10000L, RBF_Bias=0.5, Net_Type='K', Net_fPara=2.00)
+#' 
+#' # Test a (k=3, q=0.788) Kauffman model. It is critical when 2p(1-p)K~1.
+#' # set.seed(20250102L);
+#' # DNS_Engaged(10000L, RBF_Bias=0.788, Net_Type='K', Net_fPara=3.00);
+#' # Return $[[Overview]] (other are NA)
+#' #  Stable    Useless    Engaged   External Controlled
+#' #    7991       1171        838          0          0 
+#' set.seed(20250102L)
+#' DNS_Engaged(10000L, RBF_Bias=0.788, Net_Type='K', Net_fPara=3.00)
+#' 
+#' # Test a (k=3, q=0.5) Kauffman model. It is chaotic, when 2p(1-p)K>1.
+#' # set.seed(20250103L);
+#' # DNS_Engaged(10000L, RBF_Bias=0.5, Net_Type='K', Net_fPara=3.00);
+#' # Return $[[Overview]] (other are NA)
+#' #   Stable    Useless    Engaged   External Controlled 
+#' #      118        732       9150          0          0
+#' set.seed(20250103L)
+#' DNS_Engaged(10000L, RBF_Bias=0.5, Net_Type='K', Net_fPara=3.00)
+#' 
+DNS_Engaged<-function(Size=1000L,
+  OBF_Type='R', OBF_iPara1=1L, OBF_iPara2=1L, OBF_Ratio=0.1, RBF_Bias=c(0.5,0.5),
+  Net_Type='K', Net_fPara=4.00, Controller=NULL, ConVals=NULL,
+  NodeAttri=FALSE, ResidualNet=FALSE, NumSys=2L){
+  # Check parameter.
+  f_par=c(Size, OBF_iPara1, OBF_iPara2, OBF_Ratio, RBF_Bias, Net_fPara);
+  c_par=c(OBF_Type,Net_Type);
+  if((!all(is.numeric(f_par)))||(!all(is.character(c_par)))){
+    stop("Invalid inputs. Please check the help documentation.\n");}
+  if((0>Size)||(0>OBF_Ratio||OBF_Ratio>1)||
+  any(RBF_Bias<0)||any(RBF_Bias>1)||(NumSys>2&&length(RBF_Bias)!=NumSys)||
+    (0>Net_fPara||Net_fPara>12)||# OBF_iPara1, OBF_iPara2 checked in other fun.
+    !(OBF_Type %in% c('R','C','P','M','D','T'))||
+    !(Net_Type %in% c('K','E','R','L'))){
+    stop("Invalid inputs. Please check the help documentation.\n");}
+  # Check existing some manual controlled nodes >>>
+  con.id=Controller;
+  con.vals=ConVals;
+  if(!is.null(Controller)){# Has controllers.
+    con.id=Controller-1;# Note the differences in the index between C++ and R.
+    if(is.null(ConVals)){# Not provided, random setting.
+      con.vals[Controller]=runif(length(Controller))>0.5;}
+    else {# Provided.
+      if(length(Controller)<=length(ConVals)){# Enough long
+        con.vals[Controller]=as.logical(ConVals)[1:length(Controller)];}
+      else {
+        stop("Length of provided 'ConVals' is insufficient.");}}}
+  else {# Non controlling con.id[0] serves as label.
+    con.id=-666L;con.vals=c(-666,-666);}
+  # Execute analysis >>>
+  xx=c_ScalingLaw_Simualtion(as.integer(Size), as.integer(NumSys),
+    OBF_Type[1], RBF_Bias, OBF_Ratio, Net_Type[1], Net_fPara, 
+    as.integer(OBF_iPara1), as.integer(OBF_iPara2), as.integer(con.id), 
+    as.integer(con.vals), as.integer(NodeAttri), as.integer(ResidualNet));
+  # Set return list's name.
+  names(xx)=c("Overview","Node_S01U","Node_SUE","ResidualNetwork","StableNodeInfo");
+  names(xx[[1]])=c("Stable","Useless","Engaged","External","Controlled");
+  if(ResidualNet&&(xx[[1]][3]>0)){# Return ResNet.
+    xx[[5]][[1]]=paste0("N",formatC(c(1:Size)-1, width=floor(log10(Size-1))+1, flag="0"));
+    names(xx[[5]][[2]])=xx[[5]][[1]];
+    names(xx[[5]][[3]])=xx[[5]][[1]];
+    names(xx[[5]][[4]])=xx[[5]][[1]];}
+  return (xx);
+}
