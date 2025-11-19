@@ -10,7 +10,7 @@ thereby addressing the limitations of existing Boolean related packages. Its fra
 are shown in Figure 1. For detailed concepts, algorithms, and settings, please refer to the manuscripts [Be updated later].
 
 <div align="center">
-  <img src="PaperFigures/fig1.png" alt="title" width="550">
+  <img src="PaperFigures/biological.png" alt="title" width="600">
   <br>
   <p>Figure 1: Framework and modules of BioLogical</p>
 </div>
