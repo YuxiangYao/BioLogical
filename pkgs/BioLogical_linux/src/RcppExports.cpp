@@ -12,7 +12,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // c_BF_isPointed
 bool c_BF_isPointed(LogicalVector boolfuns, int k, char Type, bool Showit);
-RcppExport SEXP _BioLogic_c_BF_isPointed(SEXP boolfunsSEXP, SEXP kSEXP, SEXP TypeSEXP, SEXP ShowitSEXP) {
+RcppExport SEXP _BioLogical_c_BF_isPointed(SEXP boolfunsSEXP, SEXP kSEXP, SEXP TypeSEXP, SEXP ShowitSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -26,7 +26,7 @@ END_RCPP
 }
 // c_BF_Generator
 Rcpp::IntegerVector c_BF_Generator(char Type, int k, double bias, IntegerVector Vars);
-RcppExport SEXP _BioLogic_c_BF_Generator(SEXP TypeSEXP, SEXP kSEXP, SEXP biasSEXP, SEXP VarsSEXP) {
+RcppExport SEXP _BioLogical_c_BF_Generator(SEXP TypeSEXP, SEXP kSEXP, SEXP biasSEXP, SEXP VarsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -40,7 +40,7 @@ END_RCPP
 }
 // c_BF_Sensitivity
 double c_BF_Sensitivity(LogicalVector& boolfuns, int k);
-RcppExport SEXP _BioLogic_c_BF_Sensitivity(SEXP boolfunsSEXP, SEXP kSEXP) {
+RcppExport SEXP _BioLogical_c_BF_Sensitivity(SEXP boolfunsSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -52,7 +52,7 @@ END_RCPP
 }
 // c_BF_Effective
 double c_BF_Effective(IntegerVector& boolfuns, int k);
-RcppExport SEXP _BioLogic_c_BF_Effective(SEXP boolfunsSEXP, SEXP kSEXP) {
+RcppExport SEXP _BioLogical_c_BF_Effective(SEXP boolfunsSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -64,7 +64,7 @@ END_RCPP
 }
 // c_BF_Complexity
 double c_BF_Complexity(IntegerVector& boolfuns, int k);
-RcppExport SEXP _BioLogic_c_BF_Complexity(SEXP boolfunsSEXP, SEXP kSEXP) {
+RcppExport SEXP _BioLogical_c_BF_Complexity(SEXP boolfunsSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -76,7 +76,7 @@ END_RCPP
 }
 // c_BF_EffectiveEdges
 Rcpp::NumericVector c_BF_EffectiveEdges(IntegerVector& boolfuns, int k);
-RcppExport SEXP _BioLogic_c_BF_EffectiveEdges(SEXP boolfunsSEXP, SEXP kSEXP) {
+RcppExport SEXP _BioLogical_c_BF_EffectiveEdges(SEXP boolfunsSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -88,7 +88,7 @@ END_RCPP
 }
 // c_BF_QuineMcCluskey
 void c_BF_QuineMcCluskey(IntegerVector& boolfuns, int k, CharacterVector VarsName);
-RcppExport SEXP _BioLogic_c_BF_QuineMcCluskey(SEXP boolfunsSEXP, SEXP kSEXP, SEXP VarsNameSEXP) {
+RcppExport SEXP _BioLogical_c_BF_QuineMcCluskey(SEXP boolfunsSEXP, SEXP kSEXP, SEXP VarsNameSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< IntegerVector& >::type boolfuns(boolfunsSEXP);
@@ -100,7 +100,7 @@ END_RCPP
 }
 // c_FrameTruthTable
 Rcpp::IntegerMatrix c_FrameTruthTable(int VarNum);
-RcppExport SEXP _BioLogic_c_FrameTruthTable(SEXP VarNumSEXP) {
+RcppExport SEXP _BioLogical_c_FrameTruthTable(SEXP VarNumSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -111,7 +111,7 @@ END_RCPP
 }
 // c_B_NestedCanalized
 Rcpp::List c_B_NestedCanalized(IntegerVector& boolfuns, int k);
-RcppExport SEXP _BioLogic_c_B_NestedCanalized(SEXP boolfunsSEXP, SEXP kSEXP) {
+RcppExport SEXP _BioLogical_c_B_NestedCanalized(SEXP boolfunsSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -123,7 +123,7 @@ END_RCPP
 }
 // c_Derrida_Simualtion
 double c_Derrida_Simualtion(int sys_size, int ll_system, int sim_step, char obf_type, Rcpp::NumericVector bias_rf, double obf_ratio, double init_dis, Rcpp::NumericVector init_1_ratio, char net_type, double net_f_para, int obf_i_para1, int obf_i_para2, int RuleType);
-RcppExport SEXP _BioLogic_c_Derrida_Simualtion(SEXP sys_sizeSEXP, SEXP ll_systemSEXP, SEXP sim_stepSEXP, SEXP obf_typeSEXP, SEXP bias_rfSEXP, SEXP obf_ratioSEXP, SEXP init_disSEXP, SEXP init_1_ratioSEXP, SEXP net_typeSEXP, SEXP net_f_paraSEXP, SEXP obf_i_para1SEXP, SEXP obf_i_para2SEXP, SEXP RuleTypeSEXP) {
+RcppExport SEXP _BioLogical_c_Derrida_Simualtion(SEXP sys_sizeSEXP, SEXP ll_systemSEXP, SEXP sim_stepSEXP, SEXP obf_typeSEXP, SEXP bias_rfSEXP, SEXP obf_ratioSEXP, SEXP init_disSEXP, SEXP init_1_ratioSEXP, SEXP net_typeSEXP, SEXP net_f_paraSEXP, SEXP obf_i_para1SEXP, SEXP obf_i_para2SEXP, SEXP RuleTypeSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -146,7 +146,7 @@ END_RCPP
 }
 // c_Derrida_Load
 double c_Derrida_Load(Rcpp::List& aRealNet, IntegerVector& PointedGene, IntegerVector& PointValues, IntegerVector& InD, IntegerVector& OtD, double init_dis, Rcpp::NumericVector init_1_ratio, int sim_step, int RuleType);
-RcppExport SEXP _BioLogic_c_Derrida_Load(SEXP aRealNetSEXP, SEXP PointedGeneSEXP, SEXP PointValuesSEXP, SEXP InDSEXP, SEXP OtDSEXP, SEXP init_disSEXP, SEXP init_1_ratioSEXP, SEXP sim_stepSEXP, SEXP RuleTypeSEXP) {
+RcppExport SEXP _BioLogical_c_Derrida_Load(SEXP aRealNetSEXP, SEXP PointedGeneSEXP, SEXP PointValuesSEXP, SEXP InDSEXP, SEXP OtDSEXP, SEXP init_disSEXP, SEXP init_1_ratioSEXP, SEXP sim_stepSEXP, SEXP RuleTypeSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -165,7 +165,7 @@ END_RCPP
 }
 // c_Percolation_Simualtion
 Rcpp::List c_Percolation_Simualtion(int sys_size, int ll_system, int sim_step, int lat_type, int obr_window, char obf_type, Rcpp::NumericVector bias_rf, double obf_ratio, Rcpp::NumericVector init_bias, char net_type, double net_f_para, int obf_i_para1, int obf_i_para2, bool OutPut, int RuleType);
-RcppExport SEXP _BioLogic_c_Percolation_Simualtion(SEXP sys_sizeSEXP, SEXP ll_systemSEXP, SEXP sim_stepSEXP, SEXP lat_typeSEXP, SEXP obr_windowSEXP, SEXP obf_typeSEXP, SEXP bias_rfSEXP, SEXP obf_ratioSEXP, SEXP init_biasSEXP, SEXP net_typeSEXP, SEXP net_f_paraSEXP, SEXP obf_i_para1SEXP, SEXP obf_i_para2SEXP, SEXP OutPutSEXP, SEXP RuleTypeSEXP) {
+RcppExport SEXP _BioLogical_c_Percolation_Simualtion(SEXP sys_sizeSEXP, SEXP ll_systemSEXP, SEXP sim_stepSEXP, SEXP lat_typeSEXP, SEXP obr_windowSEXP, SEXP obf_typeSEXP, SEXP bias_rfSEXP, SEXP obf_ratioSEXP, SEXP init_biasSEXP, SEXP net_typeSEXP, SEXP net_f_paraSEXP, SEXP obf_i_para1SEXP, SEXP obf_i_para2SEXP, SEXP OutPutSEXP, SEXP RuleTypeSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -190,7 +190,7 @@ END_RCPP
 }
 // c_ScalingLaw_Simualtion
 Rcpp::List c_ScalingLaw_Simualtion(int sys_size, int ll_system, char obf_type, Rcpp::NumericVector bias_rf, double obf_ratio, char net_type, double net_f_para, int obf_i_para1, int obf_i_para2, Rcpp::IntegerVector PointedNode, Rcpp::IntegerVector PointValues, int NodeDetailInfor, int ReturnResidualNetwork);
-RcppExport SEXP _BioLogic_c_ScalingLaw_Simualtion(SEXP sys_sizeSEXP, SEXP ll_systemSEXP, SEXP obf_typeSEXP, SEXP bias_rfSEXP, SEXP obf_ratioSEXP, SEXP net_typeSEXP, SEXP net_f_paraSEXP, SEXP obf_i_para1SEXP, SEXP obf_i_para2SEXP, SEXP PointedNodeSEXP, SEXP PointValuesSEXP, SEXP NodeDetailInforSEXP, SEXP ReturnResidualNetworkSEXP) {
+RcppExport SEXP _BioLogical_c_ScalingLaw_Simualtion(SEXP sys_sizeSEXP, SEXP ll_systemSEXP, SEXP obf_typeSEXP, SEXP bias_rfSEXP, SEXP obf_ratioSEXP, SEXP net_typeSEXP, SEXP net_f_paraSEXP, SEXP obf_i_para1SEXP, SEXP obf_i_para2SEXP, SEXP PointedNodeSEXP, SEXP PointValuesSEXP, SEXP NodeDetailInforSEXP, SEXP ReturnResidualNetworkSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -213,7 +213,7 @@ END_RCPP
 }
 // c_ScalingLaw_RealNet
 Rcpp::List c_ScalingLaw_RealNet(Rcpp::List& aRealNet, IntegerVector& PointedGene, IntegerVector& PointValues, IntegerVector& InD, IntegerVector& OtD, int NodeDetailInfor, int ReturnResidualNetwork);
-RcppExport SEXP _BioLogic_c_ScalingLaw_RealNet(SEXP aRealNetSEXP, SEXP PointedGeneSEXP, SEXP PointValuesSEXP, SEXP InDSEXP, SEXP OtDSEXP, SEXP NodeDetailInforSEXP, SEXP ReturnResidualNetworkSEXP) {
+RcppExport SEXP _BioLogical_c_ScalingLaw_RealNet(SEXP aRealNetSEXP, SEXP PointedGeneSEXP, SEXP PointValuesSEXP, SEXP InDSEXP, SEXP OtDSEXP, SEXP NodeDetailInforSEXP, SEXP ReturnResidualNetworkSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -230,7 +230,7 @@ END_RCPP
 }
 // c_CoreDynamicNode
 Rcpp::List c_CoreDynamicNode(Rcpp::List aRealNet, IntegerVector PointedGene, IntegerVector PointValues, IntegerVector InD, IntegerVector OtD, int NodeDetailInfor, int ReturnResidualNetwork, int Times);
-RcppExport SEXP _BioLogic_c_CoreDynamicNode(SEXP aRealNetSEXP, SEXP PointedGeneSEXP, SEXP PointValuesSEXP, SEXP InDSEXP, SEXP OtDSEXP, SEXP NodeDetailInforSEXP, SEXP ReturnResidualNetworkSEXP, SEXP TimesSEXP) {
+RcppExport SEXP _BioLogical_c_CoreDynamicNode(SEXP aRealNetSEXP, SEXP PointedGeneSEXP, SEXP PointValuesSEXP, SEXP InDSEXP, SEXP OtDSEXP, SEXP NodeDetailInforSEXP, SEXP ReturnResidualNetworkSEXP, SEXP TimesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -248,7 +248,7 @@ END_RCPP
 }
 // c_BoolFun2Polynomial
 Rcpp::List c_BoolFun2Polynomial(Rcpp::IntegerMatrix& VariableMat, Rcpp::IntegerVector& MapTab, int LogiSpin);
-RcppExport SEXP _BioLogic_c_BoolFun2Polynomial(SEXP VariableMatSEXP, SEXP MapTabSEXP, SEXP LogiSpinSEXP) {
+RcppExport SEXP _BioLogical_c_BoolFun2Polynomial(SEXP VariableMatSEXP, SEXP MapTabSEXP, SEXP LogiSpinSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -261,7 +261,7 @@ END_RCPP
 }
 // c_StrongConnectComponent
 Rcpp::List c_StrongConnectComponent(Rcpp::List& aRealNet, Rcpp::IntegerVector& InD, Rcpp::IntegerVector& OtD);
-RcppExport SEXP _BioLogic_c_StrongConnectComponent(SEXP aRealNetSEXP, SEXP InDSEXP, SEXP OtDSEXP) {
+RcppExport SEXP _BioLogical_c_StrongConnectComponent(SEXP aRealNetSEXP, SEXP InDSEXP, SEXP OtDSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -274,7 +274,7 @@ END_RCPP
 }
 // c_MulF_Complexity
 double c_MulF_Complexity(IntegerVector& avec, int k, int L);
-RcppExport SEXP _BioLogic_c_MulF_Complexity(SEXP avecSEXP, SEXP kSEXP, SEXP LSEXP) {
+RcppExport SEXP _BioLogical_c_MulF_Complexity(SEXP avecSEXP, SEXP kSEXP, SEXP LSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -287,7 +287,7 @@ END_RCPP
 }
 // c_MulF_Effective
 double c_MulF_Effective(IntegerVector& avec, int k, int L);
-RcppExport SEXP _BioLogic_c_MulF_Effective(SEXP avecSEXP, SEXP kSEXP, SEXP LSEXP) {
+RcppExport SEXP _BioLogical_c_MulF_Effective(SEXP avecSEXP, SEXP kSEXP, SEXP LSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -300,7 +300,7 @@ END_RCPP
 }
 // c_MulF_EffectiveEdges
 Rcpp::NumericVector c_MulF_EffectiveEdges(IntegerVector& avec, int k, int L);
-RcppExport SEXP _BioLogic_c_MulF_EffectiveEdges(SEXP avecSEXP, SEXP kSEXP, SEXP LSEXP) {
+RcppExport SEXP _BioLogical_c_MulF_EffectiveEdges(SEXP avecSEXP, SEXP kSEXP, SEXP LSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -313,7 +313,7 @@ END_RCPP
 }
 // c_MulF_QuineMcCluskey
 IntegerMatrix c_MulF_QuineMcCluskey(IntegerVector& avec, int k, int L);
-RcppExport SEXP _BioLogic_c_MulF_QuineMcCluskey(SEXP avecSEXP, SEXP kSEXP, SEXP LSEXP) {
+RcppExport SEXP _BioLogical_c_MulF_QuineMcCluskey(SEXP avecSEXP, SEXP kSEXP, SEXP LSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -326,7 +326,7 @@ END_RCPP
 }
 // c_MulVF_Generator
 Rcpp::IntegerVector c_MulVF_Generator(char FunType, int k, int L, int CanaDeep, Rcpp::IntegerVector& CanaVar, Rcpp::IntegerVector& CanaVarNum, Rcpp::List& CanaInfo1, Rcpp::List& CanaInfo2, Rcpp::NumericVector& bias, bool Cana_Free);
-RcppExport SEXP _BioLogic_c_MulVF_Generator(SEXP FunTypeSEXP, SEXP kSEXP, SEXP LSEXP, SEXP CanaDeepSEXP, SEXP CanaVarSEXP, SEXP CanaVarNumSEXP, SEXP CanaInfo1SEXP, SEXP CanaInfo2SEXP, SEXP biasSEXP, SEXP Cana_FreeSEXP) {
+RcppExport SEXP _BioLogical_c_MulVF_Generator(SEXP FunTypeSEXP, SEXP kSEXP, SEXP LSEXP, SEXP CanaDeepSEXP, SEXP CanaVarSEXP, SEXP CanaVarNumSEXP, SEXP CanaInfo1SEXP, SEXP CanaInfo2SEXP, SEXP biasSEXP, SEXP Cana_FreeSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -346,7 +346,7 @@ END_RCPP
 }
 // c_MulVF_Sensitivity
 double c_MulVF_Sensitivity(Rcpp::IntegerVector& amulfun, int k, int L, int Lens);
-RcppExport SEXP _BioLogic_c_MulVF_Sensitivity(SEXP amulfunSEXP, SEXP kSEXP, SEXP LSEXP, SEXP LensSEXP) {
+RcppExport SEXP _BioLogical_c_MulVF_Sensitivity(SEXP amulfunSEXP, SEXP kSEXP, SEXP LSEXP, SEXP LensSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -360,7 +360,7 @@ END_RCPP
 }
 // c_M_NestedCanalized
 Rcpp::List c_M_NestedCanalized(Rcpp::IntegerVector& amulfun, int k, int L, int Lens);
-RcppExport SEXP _BioLogic_c_M_NestedCanalized(SEXP amulfunSEXP, SEXP kSEXP, SEXP LSEXP, SEXP LensSEXP) {
+RcppExport SEXP _BioLogical_c_M_NestedCanalized(SEXP amulfunSEXP, SEXP kSEXP, SEXP LSEXP, SEXP LensSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -374,7 +374,7 @@ END_RCPP
 }
 // c_M_Threshold
 Rcpp::List c_M_Threshold(Rcpp::IntegerVector& amulfun, int k, int L, int Lens);
-RcppExport SEXP _BioLogic_c_M_Threshold(SEXP amulfunSEXP, SEXP kSEXP, SEXP LSEXP, SEXP LensSEXP) {
+RcppExport SEXP _BioLogical_c_M_Threshold(SEXP amulfunSEXP, SEXP kSEXP, SEXP LSEXP, SEXP LensSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -388,7 +388,7 @@ END_RCPP
 }
 // c_M_Domainted
 Rcpp::List c_M_Domainted(Rcpp::IntegerVector& amulfun, int k, int L, int Lens);
-RcppExport SEXP _BioLogic_c_M_Domainted(SEXP amulfunSEXP, SEXP kSEXP, SEXP LSEXP, SEXP LensSEXP) {
+RcppExport SEXP _BioLogical_c_M_Domainted(SEXP amulfunSEXP, SEXP kSEXP, SEXP LSEXP, SEXP LensSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -402,7 +402,7 @@ END_RCPP
 }
 // c_M_Signed
 Rcpp::List c_M_Signed(Rcpp::IntegerVector& amulfun, int k, int L, int Lens);
-RcppExport SEXP _BioLogic_c_M_Signed(SEXP amulfunSEXP, SEXP kSEXP, SEXP LSEXP, SEXP LensSEXP) {
+RcppExport SEXP _BioLogical_c_M_Signed(SEXP amulfunSEXP, SEXP kSEXP, SEXP LSEXP, SEXP LensSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -416,7 +416,7 @@ END_RCPP
 }
 // c_MulVFun2Polynomial
 Rcpp::List c_MulVFun2Polynomial(Rcpp::IntegerMatrix& VariableMat, Rcpp::IntegerVector& MapTab, int k, int L);
-RcppExport SEXP _BioLogic_c_MulVFun2Polynomial(SEXP VariableMatSEXP, SEXP MapTabSEXP, SEXP kSEXP, SEXP LSEXP) {
+RcppExport SEXP _BioLogical_c_MulVFun2Polynomial(SEXP VariableMatSEXP, SEXP MapTabSEXP, SEXP kSEXP, SEXP LSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -430,7 +430,7 @@ END_RCPP
 }
 // c_MulV2Bool_Bool2MulV
 Rcpp::IntegerVector c_MulV2Bool_Bool2MulV(Rcpp::IntegerVector OriMapTab, int k, int L, Rcpp::IntegerVector Thresholds, int b2m);
-RcppExport SEXP _BioLogic_c_MulV2Bool_Bool2MulV(SEXP OriMapTabSEXP, SEXP kSEXP, SEXP LSEXP, SEXP ThresholdsSEXP, SEXP b2mSEXP) {
+RcppExport SEXP _BioLogical_c_MulV2Bool_Bool2MulV(SEXP OriMapTabSEXP, SEXP kSEXP, SEXP LSEXP, SEXP ThresholdsSEXP, SEXP b2mSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -445,7 +445,7 @@ END_RCPP
 }
 // cin_OnlyTempState
 Rcpp::List cin_OnlyTempState(int sys_size, int ll_system, int sim_step, char obf_type, Rcpp::NumericVector bias_rf, double obf_ratio, double init_dis, Rcpp::NumericVector init_1_ratio, char net_type, double net_f_para, int obf_i_para1, int obf_i_para2, int RuleType);
-RcppExport SEXP _BioLogic_cin_OnlyTempState(SEXP sys_sizeSEXP, SEXP ll_systemSEXP, SEXP sim_stepSEXP, SEXP obf_typeSEXP, SEXP bias_rfSEXP, SEXP obf_ratioSEXP, SEXP init_disSEXP, SEXP init_1_ratioSEXP, SEXP net_typeSEXP, SEXP net_f_paraSEXP, SEXP obf_i_para1SEXP, SEXP obf_i_para2SEXP, SEXP RuleTypeSEXP) {
+RcppExport SEXP _BioLogical_cin_OnlyTempState(SEXP sys_sizeSEXP, SEXP ll_systemSEXP, SEXP sim_stepSEXP, SEXP obf_typeSEXP, SEXP bias_rfSEXP, SEXP obf_ratioSEXP, SEXP init_disSEXP, SEXP init_1_ratioSEXP, SEXP net_typeSEXP, SEXP net_f_paraSEXP, SEXP obf_i_para1SEXP, SEXP obf_i_para2SEXP, SEXP RuleTypeSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -468,7 +468,7 @@ END_RCPP
 }
 // cin_OnlyTempState_Load
 Rcpp::List cin_OnlyTempState_Load(Rcpp::List& aRealNet, IntegerVector& PointedGene, IntegerVector& PointValues, IntegerVector& InD, IntegerVector& OtD, Rcpp::NumericVector init_1_ratio, int sim_step, int RuleType);
-RcppExport SEXP _BioLogic_cin_OnlyTempState_Load(SEXP aRealNetSEXP, SEXP PointedGeneSEXP, SEXP PointValuesSEXP, SEXP InDSEXP, SEXP OtDSEXP, SEXP init_1_ratioSEXP, SEXP sim_stepSEXP, SEXP RuleTypeSEXP) {
+RcppExport SEXP _BioLogical_cin_OnlyTempState_Load(SEXP aRealNetSEXP, SEXP PointedGeneSEXP, SEXP PointValuesSEXP, SEXP InDSEXP, SEXP OtDSEXP, SEXP init_1_ratioSEXP, SEXP sim_stepSEXP, SEXP RuleTypeSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -486,7 +486,7 @@ END_RCPP
 }
 // c_ObtainFeedBackLoop
 Rcpp::List c_ObtainFeedBackLoop(Rcpp::List& aRealNet, Rcpp::IntegerVector& InD, Rcpp::IntegerVector& OtD, int Isolated, int Type);
-RcppExport SEXP _BioLogic_c_ObtainFeedBackLoop(SEXP aRealNetSEXP, SEXP InDSEXP, SEXP OtDSEXP, SEXP IsolatedSEXP, SEXP TypeSEXP) {
+RcppExport SEXP _BioLogical_c_ObtainFeedBackLoop(SEXP aRealNetSEXP, SEXP InDSEXP, SEXP OtDSEXP, SEXP IsolatedSEXP, SEXP TypeSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -501,7 +501,7 @@ END_RCPP
 }
 // c_AttractorSim
 Rcpp::IntegerMatrix c_AttractorSim(Rcpp::List& aRealNet, int SimNum, IntegerVector& PointedGene, IntegerVector& PointValues, IntegerVector& InD, IntegerVector& OtD, int sim_step, int RuleType, int L_sys);
-RcppExport SEXP _BioLogic_c_AttractorSim(SEXP aRealNetSEXP, SEXP SimNumSEXP, SEXP PointedGeneSEXP, SEXP PointValuesSEXP, SEXP InDSEXP, SEXP OtDSEXP, SEXP sim_stepSEXP, SEXP RuleTypeSEXP, SEXP L_sysSEXP) {
+RcppExport SEXP _BioLogical_c_AttractorSim(SEXP aRealNetSEXP, SEXP SimNumSEXP, SEXP PointedGeneSEXP, SEXP PointValuesSEXP, SEXP InDSEXP, SEXP OtDSEXP, SEXP sim_stepSEXP, SEXP RuleTypeSEXP, SEXP L_sysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -520,7 +520,7 @@ END_RCPP
 }
 // c_AttractorSim_MulVal
 Rcpp::IntegerMatrix c_AttractorSim_MulVal(Rcpp::List& aRealNet_MulVal, int SimNum, IntegerVector& PointedGene, IntegerVector& PointValues, IntegerVector& InD, IntegerVector& OtD, IntegerVector& AllNegative, int sim_step, int L_sys);
-RcppExport SEXP _BioLogic_c_AttractorSim_MulVal(SEXP aRealNet_MulValSEXP, SEXP SimNumSEXP, SEXP PointedGeneSEXP, SEXP PointValuesSEXP, SEXP InDSEXP, SEXP OtDSEXP, SEXP AllNegativeSEXP, SEXP sim_stepSEXP, SEXP L_sysSEXP) {
+RcppExport SEXP _BioLogical_c_AttractorSim_MulVal(SEXP aRealNet_MulValSEXP, SEXP SimNumSEXP, SEXP PointedGeneSEXP, SEXP PointValuesSEXP, SEXP InDSEXP, SEXP OtDSEXP, SEXP AllNegativeSEXP, SEXP sim_stepSEXP, SEXP L_sysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -539,44 +539,44 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_BioLogic_c_BF_isPointed", (DL_FUNC) &_BioLogic_c_BF_isPointed, 4},
-    {"_BioLogic_c_BF_Generator", (DL_FUNC) &_BioLogic_c_BF_Generator, 4},
-    {"_BioLogic_c_BF_Sensitivity", (DL_FUNC) &_BioLogic_c_BF_Sensitivity, 2},
-    {"_BioLogic_c_BF_Effective", (DL_FUNC) &_BioLogic_c_BF_Effective, 2},
-    {"_BioLogic_c_BF_Complexity", (DL_FUNC) &_BioLogic_c_BF_Complexity, 2},
-    {"_BioLogic_c_BF_EffectiveEdges", (DL_FUNC) &_BioLogic_c_BF_EffectiveEdges, 2},
-    {"_BioLogic_c_BF_QuineMcCluskey", (DL_FUNC) &_BioLogic_c_BF_QuineMcCluskey, 3},
-    {"_BioLogic_c_FrameTruthTable", (DL_FUNC) &_BioLogic_c_FrameTruthTable, 1},
-    {"_BioLogic_c_B_NestedCanalized", (DL_FUNC) &_BioLogic_c_B_NestedCanalized, 2},
-    {"_BioLogic_c_Derrida_Simualtion", (DL_FUNC) &_BioLogic_c_Derrida_Simualtion, 13},
-    {"_BioLogic_c_Derrida_Load", (DL_FUNC) &_BioLogic_c_Derrida_Load, 9},
-    {"_BioLogic_c_Percolation_Simualtion", (DL_FUNC) &_BioLogic_c_Percolation_Simualtion, 15},
-    {"_BioLogic_c_ScalingLaw_Simualtion", (DL_FUNC) &_BioLogic_c_ScalingLaw_Simualtion, 13},
-    {"_BioLogic_c_ScalingLaw_RealNet", (DL_FUNC) &_BioLogic_c_ScalingLaw_RealNet, 7},
-    {"_BioLogic_c_CoreDynamicNode", (DL_FUNC) &_BioLogic_c_CoreDynamicNode, 8},
-    {"_BioLogic_c_BoolFun2Polynomial", (DL_FUNC) &_BioLogic_c_BoolFun2Polynomial, 3},
-    {"_BioLogic_c_StrongConnectComponent", (DL_FUNC) &_BioLogic_c_StrongConnectComponent, 3},
-    {"_BioLogic_c_MulF_Complexity", (DL_FUNC) &_BioLogic_c_MulF_Complexity, 3},
-    {"_BioLogic_c_MulF_Effective", (DL_FUNC) &_BioLogic_c_MulF_Effective, 3},
-    {"_BioLogic_c_MulF_EffectiveEdges", (DL_FUNC) &_BioLogic_c_MulF_EffectiveEdges, 3},
-    {"_BioLogic_c_MulF_QuineMcCluskey", (DL_FUNC) &_BioLogic_c_MulF_QuineMcCluskey, 3},
-    {"_BioLogic_c_MulVF_Generator", (DL_FUNC) &_BioLogic_c_MulVF_Generator, 10},
-    {"_BioLogic_c_MulVF_Sensitivity", (DL_FUNC) &_BioLogic_c_MulVF_Sensitivity, 4},
-    {"_BioLogic_c_M_NestedCanalized", (DL_FUNC) &_BioLogic_c_M_NestedCanalized, 4},
-    {"_BioLogic_c_M_Threshold", (DL_FUNC) &_BioLogic_c_M_Threshold, 4},
-    {"_BioLogic_c_M_Domainted", (DL_FUNC) &_BioLogic_c_M_Domainted, 4},
-    {"_BioLogic_c_M_Signed", (DL_FUNC) &_BioLogic_c_M_Signed, 4},
-    {"_BioLogic_c_MulVFun2Polynomial", (DL_FUNC) &_BioLogic_c_MulVFun2Polynomial, 4},
-    {"_BioLogic_c_MulV2Bool_Bool2MulV", (DL_FUNC) &_BioLogic_c_MulV2Bool_Bool2MulV, 5},
-    {"_BioLogic_cin_OnlyTempState", (DL_FUNC) &_BioLogic_cin_OnlyTempState, 13},
-    {"_BioLogic_cin_OnlyTempState_Load", (DL_FUNC) &_BioLogic_cin_OnlyTempState_Load, 8},
-    {"_BioLogic_c_ObtainFeedBackLoop", (DL_FUNC) &_BioLogic_c_ObtainFeedBackLoop, 5},
-    {"_BioLogic_c_AttractorSim", (DL_FUNC) &_BioLogic_c_AttractorSim, 9},
-    {"_BioLogic_c_AttractorSim_MulVal", (DL_FUNC) &_BioLogic_c_AttractorSim_MulVal, 9},
+    {"_BioLogical_c_BF_isPointed", (DL_FUNC) &_BioLogical_c_BF_isPointed, 4},
+    {"_BioLogical_c_BF_Generator", (DL_FUNC) &_BioLogical_c_BF_Generator, 4},
+    {"_BioLogical_c_BF_Sensitivity", (DL_FUNC) &_BioLogical_c_BF_Sensitivity, 2},
+    {"_BioLogical_c_BF_Effective", (DL_FUNC) &_BioLogical_c_BF_Effective, 2},
+    {"_BioLogical_c_BF_Complexity", (DL_FUNC) &_BioLogical_c_BF_Complexity, 2},
+    {"_BioLogical_c_BF_EffectiveEdges", (DL_FUNC) &_BioLogical_c_BF_EffectiveEdges, 2},
+    {"_BioLogical_c_BF_QuineMcCluskey", (DL_FUNC) &_BioLogical_c_BF_QuineMcCluskey, 3},
+    {"_BioLogical_c_FrameTruthTable", (DL_FUNC) &_BioLogical_c_FrameTruthTable, 1},
+    {"_BioLogical_c_B_NestedCanalized", (DL_FUNC) &_BioLogical_c_B_NestedCanalized, 2},
+    {"_BioLogical_c_Derrida_Simualtion", (DL_FUNC) &_BioLogical_c_Derrida_Simualtion, 13},
+    {"_BioLogical_c_Derrida_Load", (DL_FUNC) &_BioLogical_c_Derrida_Load, 9},
+    {"_BioLogical_c_Percolation_Simualtion", (DL_FUNC) &_BioLogical_c_Percolation_Simualtion, 15},
+    {"_BioLogical_c_ScalingLaw_Simualtion", (DL_FUNC) &_BioLogical_c_ScalingLaw_Simualtion, 13},
+    {"_BioLogical_c_ScalingLaw_RealNet", (DL_FUNC) &_BioLogical_c_ScalingLaw_RealNet, 7},
+    {"_BioLogical_c_CoreDynamicNode", (DL_FUNC) &_BioLogical_c_CoreDynamicNode, 8},
+    {"_BioLogical_c_BoolFun2Polynomial", (DL_FUNC) &_BioLogical_c_BoolFun2Polynomial, 3},
+    {"_BioLogical_c_StrongConnectComponent", (DL_FUNC) &_BioLogical_c_StrongConnectComponent, 3},
+    {"_BioLogical_c_MulF_Complexity", (DL_FUNC) &_BioLogical_c_MulF_Complexity, 3},
+    {"_BioLogical_c_MulF_Effective", (DL_FUNC) &_BioLogical_c_MulF_Effective, 3},
+    {"_BioLogical_c_MulF_EffectiveEdges", (DL_FUNC) &_BioLogical_c_MulF_EffectiveEdges, 3},
+    {"_BioLogical_c_MulF_QuineMcCluskey", (DL_FUNC) &_BioLogical_c_MulF_QuineMcCluskey, 3},
+    {"_BioLogical_c_MulVF_Generator", (DL_FUNC) &_BioLogical_c_MulVF_Generator, 10},
+    {"_BioLogical_c_MulVF_Sensitivity", (DL_FUNC) &_BioLogical_c_MulVF_Sensitivity, 4},
+    {"_BioLogical_c_M_NestedCanalized", (DL_FUNC) &_BioLogical_c_M_NestedCanalized, 4},
+    {"_BioLogical_c_M_Threshold", (DL_FUNC) &_BioLogical_c_M_Threshold, 4},
+    {"_BioLogical_c_M_Domainted", (DL_FUNC) &_BioLogical_c_M_Domainted, 4},
+    {"_BioLogical_c_M_Signed", (DL_FUNC) &_BioLogical_c_M_Signed, 4},
+    {"_BioLogical_c_MulVFun2Polynomial", (DL_FUNC) &_BioLogical_c_MulVFun2Polynomial, 4},
+    {"_BioLogical_c_MulV2Bool_Bool2MulV", (DL_FUNC) &_BioLogical_c_MulV2Bool_Bool2MulV, 5},
+    {"_BioLogical_cin_OnlyTempState", (DL_FUNC) &_BioLogical_cin_OnlyTempState, 13},
+    {"_BioLogical_cin_OnlyTempState_Load", (DL_FUNC) &_BioLogical_cin_OnlyTempState_Load, 8},
+    {"_BioLogical_c_ObtainFeedBackLoop", (DL_FUNC) &_BioLogical_c_ObtainFeedBackLoop, 5},
+    {"_BioLogical_c_AttractorSim", (DL_FUNC) &_BioLogical_c_AttractorSim, 9},
+    {"_BioLogical_c_AttractorSim_MulVal", (DL_FUNC) &_BioLogical_c_AttractorSim_MulVal, 9},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_BioLogic(DllInfo *dll) {
+RcppExport void R_init_BioLogical(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }
